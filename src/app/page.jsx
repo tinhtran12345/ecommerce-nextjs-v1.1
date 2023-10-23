@@ -23,7 +23,6 @@ export default function Home() {
             <div className="max-w-[1220px] m-auto py-0 px-10">
                 <Carousel />
                 <ProductList products={products} loading={loading} />
-                <Footer />
             </div>
         </div>
     );

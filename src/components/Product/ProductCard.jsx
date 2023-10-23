@@ -22,7 +22,7 @@ const ProductCard = ({ item }) => {
                                     return (
                                         <button
                                             key={index}
-                                            className="flex justify-start h-[50px] px-2 items-center rounded-md shadow-md border-2 border-gray-400 hover:scale-110 hover:border-orange-500 relative"
+                                            className="flex justify-center gap-3 h-[50px] px-2 items-center rounded-md shadow-md border-2 border-gray-400 hover:scale-105 hover:border-orange-500 relative"
                                         >
                                             <img
                                                 src={color?.image}
@@ -44,7 +44,7 @@ const ProductCard = ({ item }) => {
                 <h2 className="font-bold text-gray-900 text-[16px] mb-3">
                     Giá sản phẩm
                 </h2>
-                <button className="mx-auto px-3 py-2 w-[60%] h-[50px] rounded-md font-bold border-2 border-red-500 ">
+                <button className="mx-auto px-3 py-2 w-[60%] h-[50px] text-[13px] md:text[16px] rounded-md font-bold border-2 border-red-500 ">
                     {item?.price}
                 </button>
             </div>
@@ -64,7 +64,7 @@ const ProductCard = ({ item }) => {
             </div>
 
             <div className="mt-[20px] flex gap-5">
-                <button className="px-3 py-2 h-[50px] rounded-md font-bold flex-1 bg-orange-500  hover:scale-105 text-white ">
+                <button className="px-2 py-2 h-[50px] md:text-[16px] text-[12px] rounded-md font-bold flex-1 bg-orange-500  hover:scale-105 text-white ">
                     Mua hàng
                 </button>
                 <button className="flex-none flex items-center justify-center flex-col gap-1 text-orange-500 px-3 border-2 border-orange-500 h-[50px] rounded-md hover:scale-105">

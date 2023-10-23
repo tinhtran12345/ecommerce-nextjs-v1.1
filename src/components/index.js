@@ -10,6 +10,6 @@ export { default as ProductList } from "./Product/ProductList.jsx";
 export { default as Modal } from "./Modal/BrandModal.jsx";
 export { default as ProductItem } from "./Product/ProductItem.jsx";
 export { default as Loading } from "./Loading.jsx";
-export { default as Footer } from "./Footer.jsx";
 export { default as ScrollToTop } from "./ScrollToTop/ScrollToTop.jsx";
 export { default as Pagination } from "./Pagination/Pagination.jsx";
+export { default as Footer } from "./Footer/Footer.jsx";

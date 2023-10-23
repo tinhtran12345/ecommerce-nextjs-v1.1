@@ -3,7 +3,7 @@ import "./globals.css";
 import CustomProvider, { ReduxProvider } from "./providers";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Navbar, ScrollToTop } from "@/components";
+import { Footer, Navbar, ScrollToTop } from "@/components";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +25,7 @@ export default function RootLayout({ children }) {
                     <ScrollToTop />
                     {children}
                     {/* <CustomProvider></CustomProvider> */}
+                    <Footer />
                 </ReduxProvider>
             </body>
         </html>
