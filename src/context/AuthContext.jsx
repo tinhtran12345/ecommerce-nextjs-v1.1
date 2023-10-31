@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
     const getCurrent = () => {
         const data = localStorage.getItem("auth");
         setCurrent(JSON.parse(data));
+        return data;
     };
     const logout = () => {
         localStorage.clear();

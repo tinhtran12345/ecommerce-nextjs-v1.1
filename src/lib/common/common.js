@@ -1,11 +1,4 @@
-import prisma from "@/config/db.config";
-
-export const getProfile = async (id) => {
-    const profile = await prisma.profile.findFirst({
-        where: {
-            userId: id,
-        },
-    });
-
-    return profile;
+export const getNumber = (string) => {
+    const number = string.match(/\d/g);
+    return +number.join("");
 };

@@ -21,3 +21,5 @@ export { default as LoginTemplate } from "./Auth/LoginTemplate.jsx";
 export { default as RegisterTemplate } from "./Auth/RegisterTemplate.jsx";
 export { default as ProductMain } from "./Product/ProductMain.jsx";
 export { default as ProductMainList } from "./Product/ProductMainList.jsx";
+export { default as MainCart } from "./Cart/MainCart.jsx";
+export { default as CartModal } from "./Modal/CartModal.jsx";

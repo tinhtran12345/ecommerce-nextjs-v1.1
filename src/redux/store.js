@@ -12,6 +12,7 @@ import {
     PURGE,
     REGISTER,
 } from "redux-persist";
+import cartReducer from "./Cart/CartSlice";
 
 const createNoopStorage = () => {
     return {
@@ -42,6 +43,7 @@ export const store = configureStore({
         // auth: persistReducer(authPersistConfig, authReducer),
         counter: counterReducer,
         product: productReducer,
+        cart: cartReducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware({

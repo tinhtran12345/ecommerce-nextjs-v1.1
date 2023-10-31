@@ -1,3 +1,4 @@
+import React from "react";
 import { Carousel, ProductMainList } from "@/components";
 
 export default function Home() {

@@ -96,7 +96,7 @@ const ProductMain = ({ params }) => {
                             <div className="h-full md:basis-[60%] border-2 border-gray-300 rounded-md">
                                 <Slider images={products?.images} />
                             </div>
-                            <ProductCard item={products} />
+                            <ProductCard item={products} id={params.id} />
                         </div>
 
                         <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8 my-3">

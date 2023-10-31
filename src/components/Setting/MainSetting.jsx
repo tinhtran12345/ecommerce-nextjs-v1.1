@@ -1,13 +1,6 @@
 "use client";
-
-import React, {
-    memo,
-    useCallback,
-    useContext,
-    useEffect,
-    useRef,
-    useState,
-} from "react";
+import { Loading } from "..";
+import React, { memo, useContext, useEffect, useState } from "react";
 import axiosConfig from "@/config/axios.config";
 import { AuthContext } from "@/context/AuthContext";
 import { toast } from "react-toastify";
@@ -46,7 +39,7 @@ const MainSetting = () => {
 
     useEffect(() => {
         const getInfo = async () => {
-            if (current?.current.email) {
+            if (current?.current) {
                 const res = await axiosConfig(
                     `api/user?email=${current?.current.email}`
                 );
@@ -59,7 +52,7 @@ const MainSetting = () => {
         if (!values) {
             getInfo();
         }
-    }, []);
+    }, [current, values]);
 
     return (
         <div className="mt-[40px] px-3 py-3 ">

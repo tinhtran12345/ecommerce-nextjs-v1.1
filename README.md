@@ -11,9 +11,12 @@
     -   search products
 -   **Using Docker for build, Coding and deploy app**
 
+## MVP
+
+-   Link: https://excalidraw.com/
+
 ## II. Detail
 
--   Link tham khảo: [amazon-clone-frontend/public/data/suggestions.json at main · JonnyDavies/amazon-clone-frontend (github.com)](https://github.com/JonnyDavies/amazon-clone-frontend/blob/main/public/data/suggestions.json)
 -   Link website tham khảo: [CellphoneS - Điện thoại, laptop, tablet, phụ kiện chính hãng](https://cellphones.com.vn/), [Digital World 2 (digital-world-2.myshopify.com)](https://digital-world-2.myshopify.com/)
 -   Link design: [Get Started with Material Tailwind - React & Tailwind CSS Components Library (material-tailwind.com)](https://www.material-tailwind.com/docs/react/installation)
 
