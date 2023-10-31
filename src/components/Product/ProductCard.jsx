@@ -3,7 +3,7 @@ import { BsFillCartPlusFill, BsFillGiftFill } from "react-icons/bs";
 
 const ProductCard = ({ item }) => {
     return (
-        <div className="md:basis-[40%] px-5 py-2 ml-2 shadow-md border-gray-300 rounded-md">
+        <div className="md:basis-[40%]  py-2 ml-2 shadow-md border-gray-300 rounded-md">
             <div className="">
                 <div className="flex flex-col gap-5 mb-2">
                     <div className="font-bold text-gray-900 text-[16px]">
@@ -22,14 +22,14 @@ const ProductCard = ({ item }) => {
                                     return (
                                         <button
                                             key={index}
-                                            className="flex justify-center gap-3 h-[50px] px-2 items-center rounded-md shadow-md border-2 border-gray-400 hover:scale-105 hover:border-orange-500 relative"
+                                            className="flex justify-center gap-2 h-[50px] px-2 items-center rounded-md shadow-md border-2 border-gray-400 hover:scale-105 hover:border-orange-500 relative"
                                         >
                                             <img
                                                 src={color?.image}
                                                 alt="colorProduct"
                                                 className="w-8 h-8"
                                             />
-                                            <p className="font-bold text-[13px]  text-gray-900 ml-2">
+                                            <p className="font-bold text-[12px] flex-1  text-gray-900 ml-1">
                                                 {color.label}
                                             </p>
                                         </button>

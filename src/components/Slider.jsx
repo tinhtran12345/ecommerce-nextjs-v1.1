@@ -7,11 +7,10 @@ import { GrFormNext, GrFormPrevious } from "react-icons/gr";
 //https://www.freecodecamp.org/news/build-an-image-carousel-with-react-and-framer-motion/
 
 const imagesDefault = [
-    "https://images.fpt.shop/unsafe/fit-in/665x374/filters:quality(100):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/12/638169084121313935_msi-gaming-gf63-thin-11uc-1228vn-i7-11800h-thiet-ke.jpg",
-    "https://images.fpt.shop/unsafe/fit-in/665x374/filters:quality(100):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/12/638169084116661360_msi-gaming-gf63-thin-11uc-1228vn-i7-11800h-man-hinh.jpg",
-    "https://images.fpt.shop/unsafe/fit-in/665x374/filters:quality(100):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/12/638169084118272649_msi-gaming-gf63-thin-11uc-1228vn-i7-11800h-hieu-nang.jpg",
-    "https://images.fpt.shop/unsafe/fit-in/665x374/filters:quality(100):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/12/638169084116865421_msi-gaming-gf63-thin-11uc-1228vn-i7-11800h-am-thanh.jpg",
-    "https://images.fpt.shop/unsafe/fit-in/665x374/filters:quality(100):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/12/638169084110942501_msi-gaming-gf63-thin-11uc-1228vn-i7-11800h-pin.jpg",
+    "https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/11/638168318098594588_hp-14s-em0080au-r3-7320u-bac-1.jpg",
+    "https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/11/638168318098165351_hp-14s-em0080au-r3-7320u-bac-2.jpg",
+    "https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/11/638168318098594588_hp-14s-em0080au-r3-7320u-bac-3.jpg",
+    "https://images.fpt.shop/unsafe/fit-in/585x390/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/4/11/638168318096894048_hp-14s-em0080au-r3-7320u-bac-4.jpg",
 ];
 
 const Slider = ({ images = imagesDefault }) => {
@@ -32,13 +31,13 @@ const Slider = ({ images = imagesDefault }) => {
         setCurrentIndex(index);
     };
 
-    useEffect(() => {
-        const loopBanner = setInterval(() => {
-            setCurrentIndex((prev) => (prev + 1) % images.length);
-            setDirection("left");
-        }, 3000);
-        return () => clearInterval(loopBanner);
-    }, [images]);
+    // useEffect(() => {
+    //     const loopBanner = setInterval(() => {
+    //         setCurrentIndex((prev) => (prev + 1) % images.length);
+    //         setDirection("left");
+    //     }, 3000);
+    //     return () => clearInterval(loopBanner);
+    // }, [images]);
     const slideVariants = {
         hiddenRight: {
             x: "100%",
@@ -85,13 +84,13 @@ const Slider = ({ images = imagesDefault }) => {
 
     return (
         <div className="mx-auto relative w-full z-0">
-            <div className="h-90 w-full relative overflow-hidden ">
-                <AnimatePresence>
+            <div className="h-full py-5 w-full relative overflow-hidden ">
+                <AnimatePresence className="relative">
                     <motion.img
                         key={currentIndex}
                         src={images[currentIndex]}
                         alt="image"
-                        className="w-full rounded-t-lg shadow-lg shadow-orange-300/50"
+                        className="w-full h-[400px] rounded-t-lg shadow-lg shadow-orange-300/50"
                         variants={slideVariants}
                         initial={
                             direction === "right" ? "hiddenRight" : "hiddenLeft"
@@ -100,12 +99,11 @@ const Slider = ({ images = imagesDefault }) => {
                         // exit="exit"
                     ></motion.img>
                 </AnimatePresence>
-
                 <motion.div
                     variants={slidersVariants}
                     whileHover="hover"
                     onClick={handleNext}
-                    className="absolute top-[40%] right-0 my-auto  opacity-50 md:opacity-100  rounded-md cursor-pointer"
+                    className="absolute top-[50%] right-0 my-auto  opacity-50 md:opacity-100  rounded-md cursor-pointer"
                 >
                     <GrFormNext className="md:w-8 md:h-8 w-5 h-5 " />
                 </motion.div>
@@ -113,13 +111,13 @@ const Slider = ({ images = imagesDefault }) => {
                     variants={slidersVariants}
                     whileHover="hover"
                     onClick={handlePrev}
-                    className="absolute top-[40%] left-0 opacity-50 md:opacity-100  rounded-md  cursor-pointer"
+                    className="absolute top-[50%] left-0 opacity-50 md:opacity-100  rounded-md  cursor-pointer"
                 >
                     <GrFormPrevious className="md:w-8 md:h-8 w-5 h-5" />
                 </motion.div>
 
                 {/* indicator */}
-                <div className="mt-3 p-2 flex justify-center gap-3 ">
+                <div className="mt-3 p-2 flex justify-center gap-3 absolute bottom-5 w-full">
                     {images.map((_, index) => {
                         return (
                             <motion.div

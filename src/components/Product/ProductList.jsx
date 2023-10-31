@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useMemo, useState } from "react";
+import React, { memo, useMemo, useState } from "react";
 
 import { Loading, Pagination, ProductItem } from "..";
 
@@ -12,7 +12,8 @@ const ProductList = ({ products, loading }) => {
     const currentTableData = useMemo(() => {
         const firstPageIndex = (currentPage - 1) * PageSize;
         const lastPageIndex = firstPageIndex + PageSize;
-        return products.slice(firstPageIndex, lastPageIndex);
+        let rs = Array.from(products)?.slice(firstPageIndex, lastPageIndex);
+        return rs;
     }, [currentPage, products]);
     return (
         <div>
@@ -23,7 +24,7 @@ const ProductList = ({ products, loading }) => {
                     </h2>
 
                     <div>
-                        {loading ? (
+                        {loading || products?.length === 0 ? (
                             <div className="w-full mt-2 p-2">
                                 <Loading />
                             </div>
@@ -54,4 +55,4 @@ const ProductList = ({ products, loading }) => {
     );
 };
 
-export default ProductList;
+export default memo(ProductList);

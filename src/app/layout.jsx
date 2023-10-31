@@ -1,9 +1,11 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import CustomProvider, { ReduxProvider } from "./providers";
+import { ReduxProvider } from "./providers";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Footer, Navbar, ScrollToTop } from "@/components";
+import { Footer, Loading, Navbar, ScrollToTop } from "@/components";
+import { Suspense } from "react";
+import { AuthProvider } from "@/context/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,15 +20,23 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${inter.className} relative`}>
-                <ReduxProvider>
-                    <Navbar />
-                    <ToastContainer />
-                    <ScrollToTop />
-                    {children}
-                    {/* <CustomProvider></CustomProvider> */}
-                    <Footer />
-                </ReduxProvider>
+            <body
+                suppressHydrationWarning={true}
+                className={`${inter.className} relative`}
+            >
+                <AuthProvider>
+                    <ReduxProvider>
+                        <Suspense fallback={<Loading />}>
+                            <div>
+                                <Navbar />
+                                <ToastContainer />
+                                <ScrollToTop />
+                                {children}
+                                <Footer />
+                            </div>
+                        </Suspense>
+                    </ReduxProvider>
+                </AuthProvider>
             </body>
         </html>
     );

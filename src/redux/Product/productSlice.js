@@ -1,3 +1,4 @@
+import { getAllProducts, getProductItem } from "@/lib/fakeApi/productApi";
 import { createSlice } from "@reduxjs/toolkit";
 
 export const productSlice = createSlice({
@@ -20,6 +21,12 @@ export const productSlice = createSlice({
 export const fetchProducts = () => async (dispatch) => {
     dispatch(productLoading());
     const response = await getAllProducts();
+    dispatch(allProducts(response));
+};
+
+export const fetchProductItem = (id) => async (dispatch) => {
+    dispatch(productLoading());
+    const response = await getProductItem(id);
     dispatch(allProducts(response));
 };
 

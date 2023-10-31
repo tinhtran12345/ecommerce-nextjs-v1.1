@@ -11,14 +11,15 @@ const Pagination = (props) => {
         pageSize,
     } = props;
 
-    const paginationRange = usePagination({
-        currentPage, // 1
-        totalCount, // 32
-        siblingCount, // 1
-        pageSize, // 8
-    });
+    const paginationRange =
+        usePagination({
+            currentPage, // 1
+            totalCount, // 32
+            siblingCount, // 1
+            pageSize, // 8
+        }) || [];
 
-    if (currentPage === 0 || paginationRange.length < 2) {
+    if (currentPage === 0 || paginationRange?.length < 2) {
         return null;
     }
 

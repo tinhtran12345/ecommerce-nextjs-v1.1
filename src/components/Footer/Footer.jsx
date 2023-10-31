@@ -1,10 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { BsSendCheck } from "react-icons/bs";
 
 const Footer = () => {
     return (
-        <div className="w-full max-w-screen mt-5">
-            <div className="max-w-[1220px] px-10 mb-3 flex mx-auto md:flex-row flex-col gap-2">
+        <div className="w-full h-full mt-5 z-50">
+            <div className="max-w-[1220px] px-10 mb-5 flex mx-auto md:flex-row flex-col gap-2">
                 <div className="flex pl-4 flex-col flex-1">
                     <span className="text-[20px] font-bold text-gray-900">
                         ĐĂNG KÝ BẢN TIN
@@ -18,15 +18,16 @@ const Footer = () => {
                         type="email"
                         className="rounded-l-full p-4 pr-0 w-full bg-[#D0E7D2] outline-none text-black placeholder:text-sm placeholder:text-gray-800 placeholder:opacity-70"
                         placeholder="Email address"
-                    ></input>
+                        alt=""
+                    />
                     <div className="w-[56px] h-[56px] bg-[#D0E7D2] rounded-r-full flex items-center justify-center text-black">
                         <BsSendCheck className="w-5 h-5 text-orange-500 mr-2 hover:scale-110" />
                     </div>
                 </div>
             </div>
-            <div className="h-[300px] bg-gray-900 w-full p-3 text-white text-[13px]">
+            <div className="h-full bg-gray-900 w-full p-5 text-white text-[13px]">
                 <div className="flex gap-5 mt-5 max-w-[1220px] mx-auto ">
-                    <div className="flex-1 flex-col gap-2 flex">
+                    <div className="flex-1 flex-col gap-3 flex">
                         <h2 className="mb-[20px] text-[15px] font-medium border-main border-l-4 pl-4">
                             Về chúng tôi
                         </h2>
@@ -41,7 +42,7 @@ const Footer = () => {
                         <span>
                             <span>Email: </span>
                             <span className="opacity-50">
-                                thphatt@gmail.com
+                                tinhtran0401@gmail.com
                             </span>
                         </span>
                     </div>
@@ -76,4 +77,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default memo(Footer);

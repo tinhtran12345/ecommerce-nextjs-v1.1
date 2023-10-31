@@ -84,14 +84,14 @@ const Menu = ({ setShowModal, setBrands }) => {
                 Các loại sản phẩm
             </h2>
             <div className="pl-4 flex flex-col gap-2 h-full relative">
-                {categories.map((category) => {
+                {categories.map((category, index) => {
                     return (
                         <a
                             onMouseEnter={() => {
                                 delay(category.brands);
                             }}
                             href={category.slug}
-                            key={category.id}
+                            key={index}
                             className={`flex w-full items-center text-gray-900  hover:text-orange-600 hover:translate-x-2 ease-out duration-300 cursor-pointer shadow-md relative `}
                         >
                             <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">

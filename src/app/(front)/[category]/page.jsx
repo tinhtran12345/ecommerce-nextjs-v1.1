@@ -3,8 +3,8 @@ import React from "react";
 
 const Page = ({ params }) => {
     return (
-        <div>
-            Page
+        <div className="min-h-[330px]">
+            <p> This is Token: 1</p>
             <Link href={'/?search="desktop'}>Search params</Link>
         </div>
     );

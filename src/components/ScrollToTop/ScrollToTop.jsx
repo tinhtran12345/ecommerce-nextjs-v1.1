@@ -25,7 +25,7 @@ const ScrollToTop = () => {
             {showTopBtn && (
                 <button
                     onClick={goToTop}
-                    className="z-100 fixed right-10 bottom-10 items-center justify-center text-white p-3 bg-orange-500 font-bold text-[16px] rounded-full flex cursor-pointer hover:scale-105"
+                    className="z-50 fixed right-10 bottom-10 items-center justify-center text-white p-3 bg-orange-500 font-bold text-[16px] rounded-full flex cursor-pointer hover:scale-105"
                 >
                     <BsArrowUpShort size={20} />
                     Top
